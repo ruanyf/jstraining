@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="jquery.js"></script>
+    <script src="babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+  class MyList extends React.Component {
+    constructor(...args) {
+      super(...args);
+      this.state = {
+        loading: true,
+        error: null,
+        data: null
+      };
+    }
+
+    componentDidMount() {
+      const url = 'https://api.github.com/search/repositories?q=javascript&sort=stars';
+      $.getJSON(url)
+       .done(
+        (value) => this.setState({
+          loading: false,
+          data: value
+        })
+      ).fail(
+        (jqXHR, textStatus) => this.setState({
+          loading: false,
+          error: jqXHR.status
+        })
+      );
+    }
+
+    render() {
+      if (this.state.loading) {
+        return <span>Loading...</span>;
+      } else if (this.state.error !== null) {
+        return <span>Error: {this.state.error}</span>;
+      } else {
+        /* 你的代码填入这里 */
+        return (
+          <div>
+            <p>API 数据获取成功</p>
+            <p>改写代码，将结果显示在这里</p>
+          </div>
+        );
+      }
+    }
+  };
+
+  ReactDOM.render(
+    <MyList/>,
+    document.getElementById('example')
+  );
+    </script>
+  </body>
+</html>

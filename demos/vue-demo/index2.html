@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue Demo</title>
+  </head>
+  <body>
+    <div id="my_view">
+      搜索：<input v-model="search" type="text" />
+    <ul>
+      <li v-for="friend in friends | filterBy search in 'name'"> {{ friend.name }} </li>
+    </ul>
+    </div>
+    <script src="vue.min.js"></script>
+    <script src="app2.js"></script>
+  </body>
+</html>
