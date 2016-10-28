@@ -79,7 +79,7 @@
 
 1. 修改源码，将显示文字变为 ”Hello React!“。
 
-## React Component
+## React 组件语法
 
 ### 实验目的
 
@@ -180,7 +180,7 @@ handleChange(e) {
 
 ### 提示
 
-1. 下面的代码可以得到当前日期。
+ 练习一、下面的代码可以得到当前日期。
 
 ```javascript
 var d = new Date();
@@ -189,7 +189,7 @@ d.getMonth() + 1 // 当前月份
 d.getDate() // 当前是每个月的几号
 ```
 
-2. 可以在`this.state`里面设置一个开关变量`isClicked`。
+练习二、可以在`this.state`里面设置一个开关变量`isClicked`。
 
 ```javascript
 this.state = {
@@ -239,9 +239,11 @@ componentDidMount() {
 
 ### 提示
 
-1. `this.state.loading`记录数据加载是否结束。只要数据请求没有结束，`this.state.loading`就一直是`true`，网页上显示`loading`。
-1. `this.state.error`保存数据请求失败时的错误信息。如果请求失败，`this.state.error`就是返回的错误对象，网页上显示报错信息。
-1. `this.state.data`保存从服务器获取的数据。如果请求成功，可以先用`console.log`方法，将它在控制台里打印出来，看看数据结构。
+（1） `this.state.loading`记录数据加载是否结束。只要数据请求没有结束，`this.state.loading`就一直是`true`，网页上显示`loading`。
+
+（2） `this.state.error`保存数据请求失败时的错误信息。如果请求失败，`this.state.error`就是返回的错误对象，网页上显示报错信息。
+
+（3） `this.state.data`保存从服务器获取的数据。如果请求成功，可以先用`console.log`方法，将它在控制台里打印出来，看看数据结构。
 
 ```javascript
 render() {
@@ -251,7 +253,7 @@ render() {
   // ...
 ```
 
-1. `this.state.data`里面的`this.state.data.items`应该是一个数组，保存着每个项目的具体信息。可以使用`forEach`方法进行遍历处理。
+（4） `this.state.data`里面的`this.state.data.items`应该是一个数组，保存着每个项目的具体信息。可以使用`forEach`方法进行遍历处理。
 
 ```javascript
 var projects = this.state.data.items;
@@ -262,7 +264,7 @@ projects.forEach(p => {
 });
 ```
 
-1. 然后，将上一步的`results`插入网页即可。
+（5）然后，将上一步的`results`插入网页即可。
 
 ```javascript
 <div>
@@ -286,16 +288,16 @@ projects.forEach(p => {
 
 1. 理解 MobX 框架
 
-### 操作目的
+### 操作步骤
 
-1. 命令行进入`demos/mobx-demo/`目录，执行如下的命令。
+（1） 命令行进入`demos/mobx-demo/`目录，执行如下的命令。
 
 ```bash
 $ npm install
 $ npm start
 ```
 
-1. 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究代码。
+（2） 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究代码。
 
 ### 注意事项
 
@@ -344,18 +346,18 @@ class Store {
 
 ### 操作步骤
 
-1. 命令行下进入`demos/redux-demo`目录，执行如下的命令。
+（1） 命令行下进入`demos/redux-demo`目录，执行如下的命令。
 
 ```bash
 $ npm install
 $ npm start
 ```
 
-1. 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究代码。
+（2）打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究代码。
 
 ### 注意事项
 
-1. Redux 要求 UI 的渲染组件都是纯组件，即不包含任何状态（`this.state`）的组件。
+（1） Redux 要求 UI 的渲染组件都是纯组件，即不包含任何状态（`this.state`）的组件。
 
 ```javascript
 <div className="index">
@@ -367,7 +369,7 @@ $ npm start
 </div>
 ```
 
-1. 进行数据处理、并包含状态的组件，称为”容器组件“。Redux 使用`connect`方法，自动生成 UI 组件对应的”容器组件“。
+（2） 进行数据处理、并包含状态的组件，称为”容器组件“。Redux 使用`connect`方法，自动生成 UI 组件对应的”容器组件“。
 
 ```javascript、
 // MyComponent 是纯的 UI 组件
@@ -377,7 +379,7 @@ const App = connect(
 )(MyComponent);
 ```
 
-1. `mapStateToProps`函数返回一个对象，表示一种映射关系，将 UI 组件的参数映射到`state`。
+（3） `mapStateToProps`函数返回一个对象，表示一种映射关系，将 UI 组件的参数映射到`state`。
 
 ```javascript
 function mapStateToProps(state) {
@@ -388,7 +390,7 @@ function mapStateToProps(state) {
 }
 ```
 
-1. `mapDispatchToProps`函数也是返回一个对象，表示一种映射关系，但定义的是哪些用户的操作应该当作`Action`，传给`Store`。
+（4） `mapDispatchToProps`函数也是返回一个对象，表示一种映射关系，但定义的是哪些用户的操作应该当作`Action`，传给`Store`。
 
 ```javascript
 function mapDispatchToProps(dispatch) {
@@ -401,7 +403,7 @@ function mapDispatchToProps(dispatch) {
 }
 ```
 
-1. `reducer`函数用来接收`action`，算出新的`state`。
+（5） `reducer`函数用来接收`action`，算出新的`state`。
 
 ```javascript
 function reducer(state = {
@@ -441,14 +443,14 @@ ReactDOM.render(
 
 ### 操作步骤
 
-1. 新建一个目录
+（1）新建一个目录
 
 ```bash
 $ mkdir simple-app-demo
 $ cd simple-app-demo
 ```
 
-2. 在该目录下，新建一个`package.json`文件。
+（2）在该目录下，新建一个`package.json`文件。
 
 ```bash
 $ npm init -y
@@ -456,7 +458,7 @@ $ npm init -y
 
 `package.json`是项目的配置文件。
 
-3. 安装`jquery`和`webpack`这两个模块。
+（3）安装`jquery`和`webpack`这两个模块。
 
 ```bash
 $ npm install -S jquery
@@ -465,7 +467,7 @@ $ npm install -S webpack
 
 打开`package.json`文件，会发现`jquery`和`webpack`都加入了`dependencies`字段，并且带有版本号。
 
-4. 在项目根目录下，新建一个网页文件`index.html`。
+（4）在项目根目录下，新建一个网页文件`index.html`。
 
 ```html
 <html>
@@ -476,7 +478,7 @@ $ npm install -S webpack
 </html>
 ```
 
-5. 在项目根目录下，新建一个脚本文件`app.js`。
+（5）在项目根目录下，新建一个脚本文件`app.js`。
 
 ```javascript
 const $ = require('jquery');
@@ -485,7 +487,7 @@ $('h1').css({ color: 'red'});
 
 上面代码中，`require`方法是 Node 特有的模块加载命令。
 
-6. 打开`package.json`，在`scripts`字段里面，添加一行。
+（6）打开`package.json`，在`scripts`字段里面，添加一行。
 
 ```javascript
 "scripts": {
@@ -494,7 +496,7 @@ $('h1').css({ color: 'red'});
 },
 ```
 
-7. 在项目根目录下，执行下面的命令，将脚本打包。
+（7） 在项目根目录下，执行下面的命令，将脚本打包。
 
 ```bash
 $ npm run build
@@ -502,7 +504,7 @@ $ npm run build
 
 执行完成，可以发现项目根目录下，新生成了一个文件`bundle.js`。
 
-8. 浏览器打开`index.html`，可以发现`Hello World`变成了红色。
+（8）浏览器打开`index.html`，可以发现`Hello World`变成了红色。
 
 ### 练习
 
@@ -516,13 +518,13 @@ $ npm run build
 
 ### 操作步骤
 
-1. 命令行进入`rest-api-demo`目录，执行下面的命令。
+（1） 命令行进入`rest-api-demo`目录，执行下面的命令。
 
 ```bash
 $ npm install -S json-server
 ```
 
-2. 在项目根目录下，新建一个 JSON 文件`db.json`。
+（2） 在项目根目录下，新建一个 JSON 文件`db.json`。
 
 ```javascript
 {
@@ -536,7 +538,7 @@ $ npm install -S json-server
 }
 ```
 
-3. 打开`package.json`，在`scripts`字段添加一行。
+（3） 打开`package.json`，在`scripts`字段添加一行。
 
 ```javascript
 "scripts": {
@@ -545,15 +547,15 @@ $ npm install -S json-server
 },
 ```
 
-4. 命令行下执行下面的命令，启动服务。
+（4） 命令行下执行下面的命令，启动服务。
 
 ```bash
 $ npm run server
 ```
 
-5. 打开 Chrome 浏览器的 Postman 应用。依次向`http://127.0.0.1:3000/posts`、`http://127.0.0r.1:3000/posts/1`发出`GET`请求，查看结果。
+（5）打开 Chrome 浏览器的 Postman 应用。依次向`http://127.0.0.1:3000/posts`、`http://127.0.0r.1:3000/posts/1`发出`GET`请求，查看结果。
 
-6. 向`http://127.0.0.1:3000/comments`发出`POST`请求。注意，数据体`Body`要选择`x-www-form-urlencoded`编码，然后依次添加下面两个字段。
+（6）向`http://127.0.0.1:3000/comments`发出`POST`请求。注意，数据体`Body`要选择`x-www-form-urlencoded`编码，然后依次添加下面两个字段。
 
 ```javascript
 body: "hello world"
@@ -562,7 +564,7 @@ postId: 1
 
 发出该请求后，再向`http://127.0.0.1:3000/comments`发出`GET`请求，查看结果。
 
-7. 向`http://127.0.0.1:3000/comments/2`发出`PUT`请求，数据体`Body`要选择`x-www-form-urlencoded`编码，然后添加下面的字段。
+（7） 向`http://127.0.0.1:3000/comments/2`发出`PUT`请求，数据体`Body`要选择`x-www-form-urlencoded`编码，然后添加下面的字段。
 
 ```javascript
 body: "hello react"
@@ -570,7 +572,7 @@ body: "hello react"
 
 发出该请求后，再向`http://127.0.0.1:3000/comments`发出`GET`请求，查看结果。
 
-8. 向`http://127.0.0.1:3000/comments/2`发出`delete`请求。
+（8）向`http://127.0.0.1:3000/comments/2`发出`delete`请求。
 
 发出该请求后，再向`http://127.0.0.1:3000/comments`发出`GET`请求，查看结果。
 
@@ -582,14 +584,14 @@ body: "hello react"
 
 ### 操作步骤
 
-1. 进入`demos/express-demo`目录，命令行执行下面的命令，安装依赖。
+（1）进入`demos/express-demo`目录，命令行执行下面的命令，安装依赖。
 
 ```bash
 $ cd demos/express-demo
 $ npm install
 ```
 
-2. 打开`app1.js`，尝试看懂这个脚本。
+（2）打开`app1.js`，尝试看懂这个脚本。
 
 ```javascript
 var express    = require('express');
@@ -621,7 +623,7 @@ console.log('Magic happens on port ' + port);
 
 上面代码指定了外部访问的端口，如果环境变量没有指定，则端口默认为`8080`。最后两行是启动应用，并输出一行提示文字。
 
-3. 在命令行下，启动这个应用。
+（3）在命令行下，启动这个应用。
 
 ```bash
 $ node app1.js
@@ -631,7 +633,7 @@ $ node app1.js
 
 然后，命令行下按 Ctrl + C，退出这个进程。
 
-4. 打开`app2.js`，查看新增的那个路由。
+（4）打开`app2.js`，查看新增的那个路由。
 
 ```javascript
 router.get('/:name', function(req, res) {
@@ -651,7 +653,7 @@ $ node app2.js
 
 然后，命令行下按 Ctrl + C，退出这个进程。
 
-5. 打开`app3.js`，先查看页面头部新增的两行代码。
+（5）打开`app3.js`，先查看页面头部新增的两行代码。
 
 ```javascript
 var express    = require('express');
@@ -699,7 +701,7 @@ name: Alice
 }
 ```
 
-6. 打开`app4.js`，查看在所有路由之前新增的那个函数。
+（6）打开`app4.js`，查看在所有路由之前新增的那个函数。
 
 ```javascript
 var router = express.Router();
@@ -728,14 +730,14 @@ router.get('/', function(req, res) {
 
 ### 操作步骤
 
-1. 进入`demos/eslint-demo`目录，安装 ESLint。
+（1）进入`demos/eslint-demo`目录，安装 ESLint。
 
 ```bash
 $ cd demos/eslint-demo
 $ npm install eslint --save-dev
 ```
 
-2. 通常，我们会使用别人已经写好的代码检查规则，这里使用的是 Airbnb 公司的规则。所以，还要安装 ESLint 这个规则模块。
+（2）通常，我们会使用别人已经写好的代码检查规则，这里使用的是 Airbnb 公司的规则。所以，还要安装 ESLint 这个规则模块。
 
 ```bash
 $ npm install eslint-plugin-import eslint-config-airbnb-base --save-dev
@@ -743,7 +745,7 @@ $ npm install eslint-plugin-import eslint-config-airbnb-base --save-dev
 
 上面代码中，`eslint-plugin-import`是运行这个规则集必须的，所以也要一起安装。
 
-3. ESLint 的配置文件是`.eslintrc.json`，放置在项目的根目录下面。新建这个文件，在里面指定使用 Airbnb 的规则。
+（3）ESLint 的配置文件是`.eslintrc.json`，放置在项目的根目录下面。新建这个文件，在里面指定使用 Airbnb 的规则。
 
 ```javascript
 {
@@ -751,7 +753,7 @@ $ npm install eslint-plugin-import eslint-config-airbnb-base --save-dev
 }
 ```
 
-4. 打开项目的`package.json`，在`scripts`字段里面添加三个脚本。
+（4）打开项目的`package.json`，在`scripts`字段里面添加三个脚本。
 
 ```javascript
 {
@@ -772,7 +774,7 @@ $ npm install eslint-plugin-import eslint-config-airbnb-base --save-dev
 - `lint-html`：将检查结果写入一个网页文件`./reports/lint-results.html`
 - `lint-fix`：自动修正某些不规范的代码
 
-5. 运行静态检查命令。
+（5）运行静态检查命令。
 
 ```bash
 $ npm run lint
@@ -785,7 +787,7 @@ $ npm run lint
 
 正常情况下，该命令会从`index.js`脚本里面，检查出来两个错误：一个是不应该使用`var`命令，另一个是不应该在生产环境使用`console.log`方法。
 
-6. 修正错误。
+（6）修正错误。
 
 ```bash
 $ npm run lint-fix
@@ -793,7 +795,7 @@ $ npm run lint-fix
 
 运行上面的命令以后，再查看`index.js`，可以看到`var x = 1;`被自动改成了`const x = 1;`。这样就消除了一个错误，但是还留下一个错误。
 
-7. 修改规则。
+（7）修改规则。
 
 由于我们想要允许使用`console.log`方法，因此可以修改`.eslintrc.json`，改变`no-console`规则。请将`.eslintrc.json`改成下面的样子。
 
@@ -821,7 +823,7 @@ $ npm run lint
 
 ### 操作步骤
 
-1. 进入`demos/mocha-demo`目录，安装 Mocha 和 Chai。
+（1） 进入`demos/mocha-demo`目录，安装 Mocha 和 Chai。
 
 ```bash
 $ cd demos/mocha-demo
@@ -829,7 +831,7 @@ $ npm install -D mocha
 $ npm install -D chai
 ```
 
-2. 打开`add.js`文件，查看源码，我们要测试的就是这个脚本。
+（2）打开`add.js`文件，查看源码，我们要测试的就是这个脚本。
 
 ```javascript
 function add(x, y) {
@@ -839,7 +841,7 @@ function add(x, y) {
 module.exports = add;
 ```
 
-3. 编写一个测试脚本`add.test.js`。
+（3）编写一个测试脚本`add.test.js`。
 
 ```javascript
 var add = require('./add.js');
@@ -876,7 +878,7 @@ var expect = require('chai').expect;
 
 断言库有很多种，Mocha并不限制使用哪一种。上面代码引入的断言库是`chai`，并且指定使用它的`expect`断言风格。
 
-4. 打开`package.json`文件，改写`scripts`字段的`test`脚本。
+（4）打开`package.json`文件，改写`scripts`字段的`test`脚本。
 
 ```javascript
 "scripts": {
@@ -890,7 +892,7 @@ var expect = require('chai').expect;
 },
 ```
 
-5. 命令行下，执行下面的命令，运行测试用例。
+（5）命令行下，执行下面的命令，运行测试用例。
 
 ```bash
 $ npm test
@@ -910,19 +912,19 @@ $ npm test
 
 ### 操作步骤
 
-1. 注册 [Github](https://github.com) 的账户。如果你已经注册过，跳过这一步。
+（1）注册 [Github](https://github.com) 的账户。如果你已经注册过，跳过这一步。
 
-2. 访问这个代码库[`github.com/ruanyf/travis-ci-demo`](https://github.com/ruanyf/travis-ci-demo)，点击右上角的`Fork`按钮，将它克隆到你自己的空间里面。
+（2）访问这个代码库[`github.com/ruanyf/travis-ci-demo`](https://github.com/ruanyf/travis-ci-demo)，点击右上角的`Fork`按钮，将它克隆到你自己的空间里面。
 
-3. 将你`fork`的代码库，克隆到本地。
+（3）将你`fork`的代码库，克隆到本地。
 
 ```bash
 $ git clone git@github.com:[your_username]/travis-ci-demo.git
 ```
 
-4. 使用你的 Github 账户，登录 [Travis CI](https://travis-ci.org/auth) 的首页。然后，访问 [Profile](https://travis-ci.org/profile) 页面，选定`travis-ci-demo`代码库运行自动构建。
+（4）使用你的 Github 账户，登录 [Travis CI](https://travis-ci.org/auth) 的首页。然后，访问 [Profile](https://travis-ci.org/profile) 页面，选定`travis-ci-demo`代码库运行自动构建。
 
-5. 回到命令行，进入你本地的`travis-ci-demo`目录，切换到`demo01`分支。
+（5）回到命令行，进入你本地的`travis-ci-demo`目录，切换到`demo01`分支。
 
 ```bash
 $ cd travis-ci-demo
@@ -949,7 +951,7 @@ node_js:
 
 上面代码指定使用 Node 4.1 版。
 
-6. Travis CI 默认依次执行以下九个脚本。
+（6）Travis CI 默认依次执行以下九个脚本。
 
 - `before_install`
 - `install`
@@ -970,7 +972,7 @@ node_js:
 "script": "npm test"
 ```
 
-7. 打开当前分支的`package.json`，可以发现它的`test`脚本是一个`lint`命令。
+（7）打开当前分支的`package.json`，可以发现它的`test`脚本是一个`lint`命令。
 
 ```javascript
 "scripts": {
@@ -978,7 +980,7 @@ node_js:
 },
 ```
 
-8. 在项目根目录下，新建一个新文件`NewUser.txt`，内容是你的用户名。提交这个文件，就会触发 Travis CI 的自动构建。
+（8）在项目根目录下，新建一个新文件`NewUser.txt`，内容是你的用户名。提交这个文件，就会触发 Travis CI 的自动构建。
 
 ```
 $ git add -A
@@ -986,9 +988,9 @@ $ git commit -m 'Testing Travis CI'
 $ git push
 ```
 
-9. 等到 Travis CI 完成自动构建，到页面上[检查](https://travis-ci.org/repositories)构建结果。
+（9）等到 Travis CI 完成自动构建，到页面上[检查](https://travis-ci.org/repositories)构建结果。
 
-10. 切换到`demo02`分支，打开`package.json`，可以看到`test`脚本，现在需要完成两步操作了。
+（10）切换到`demo02`分支，打开`package.json`，可以看到`test`脚本，现在需要完成两步操作了。
 
 ```javascript
   "scripts": {
@@ -997,7 +999,7 @@ $ git push
   },
 ```
 
-11. 重复上面第 8 步和第 9 步。
+（11）重复上面第 8 步和第 9 步。
 
 ### 练习
 
