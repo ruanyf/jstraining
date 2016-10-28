@@ -17,6 +17,8 @@
 - [Simple App]()
 - [REST API]()
 - [Express](#express)
+- [ESLint](#eslint)
+- [Mocha](#mocha)
 
 ## Backbone
 
@@ -54,7 +56,7 @@
 1. 在输入框填入内容，注意页面变化
 1. 查看[`app1.js`](./vue-demo/app1.js)，理解 Vue 组件的基本写法
 
-注意事项
+### 注意事项
 
 1. [`index2.html`](./vue-demo/index2.html)是一个稍微复杂的例子，模板如何绑定数据对象的一个字段。
 
@@ -78,15 +80,15 @@
 
 ## React Component
 
-实验目的
+### 实验目的
 
 1. 掌握 React 组件的基本写法
 
-操作步骤
+### 操作步骤
 
 1. 浏览器打开`demos/react-component-demo/index1.html`，仔细查看源码。
 
-注意事项
+### 注意事项
 
 1. `class MyTitle extends React.Component`是 ES6 语法，表示自定义一个`MyTitle`类，该类继承了基类`React.Component`的所有属性和方法。
 1. 每个组件都必须有`render`方法，定义输出的样式。
@@ -94,33 +96,33 @@
 
 ## React 组件的参数
 
-实验目的
+### 实验目的
 
 1. 学会向 React 组件传参数
 
-操作步骤
+### 操作步骤
 
 1. 浏览器打开`demos/react-component-demo/index2.html`，仔细查看源码。
 
-注意事项
+### 注意事项
 
 1. 组件内部通过`this.props`对象获取参数。
 
-练习
+### 练习
 
 1. 将组件的颜色，从红色（`red`）换成黄色（`yellow`）。
 
 ## React 组件的状态
 
-实验目的
+### 实验目的
 
 1. 学会通过状态变动，引发组件的重新渲染。
 
-操作步骤
+### 操作步骤
 
 1. 浏览器打开`demos/react-component-demo/index3.html`，仔细查看源码。
 
-注意事项
+### 注意事项
 
 ```javascript
   class MyTitle extends React.Component {
@@ -160,22 +162,24 @@ handleChange(e) {
 
 ## React 组件实战
 
-实验目的
+### 实验目的
 
 1. 学会自己写简单的 React 组件。
 
-操作步骤
+### 操作步骤
 
 1. 浏览器打开`demos/react-component-demo/index4.html`。
 1. 点击`Hello World`，看看会发生什么。
 
-练习
+### 练习
 
 1. 修改源码，使得点击`Hello World`后，会显示当前的日期，比如`Hello 2016年1月1日`。
 
-提示
+2. 请在上一步练习的基础上，进一步修改。现在`Hello World`点击一次，会改变内容，再点击就不会有反应了。请将其改成，再点击一次变回原样。
 
-下面的代码可以得到当前日期。
+### 提示
+
+1. 下面的代码可以得到当前日期。
 
 ```javascript
 var d = new Date();
@@ -184,13 +188,7 @@ d.getMonth() + 1 // 当前月份
 d.getDate() // 当前是每个月的几号
 ```
 
-2. 请在上一步练习的基础上，进一步修改。
-
-现在`Hello World`点击一次，会改变内容，再点击就不会有反应了。请将其改成，再点击一次变回原样。
-
-提示
-
-可以在`this.state`里面设置一个开关变量`isClicked`。
+2. 可以在`this.state`里面设置一个开关变量`isClicked`。
 
 ```javascript
 this.state = {
@@ -211,16 +209,16 @@ this.setState({
 
 ## React 组件的生命周期
 
-实验目的
+### 实验目的
 
 1. 掌握钩子方法的基本用法
 1. 掌握组件如何通过 Ajax 请求获取数据，并对数据进行处理
 
-操作步骤
+### 操作步骤
 
 1. 打开`demos/react-lifecycle-demo/index.html`，仔细查看源码。
 
-注意事项
+### 注意事项
 
 ```javascript
 componentDidMount() {
@@ -234,11 +232,11 @@ componentDidMount() {
 - `componentDidMount`方法在组件加载后执行，只执行一次。本例在这个方法里向服务器请求数据，操作结束前，组件都显示`Loading`。
 - `$.getJSON`方法用于向服务器请求 JSON 数据。本例的数据从 Github API 获取，可以打开源码里面的链接，看看原始的数据结构。
 
-练习
+### 练习
 
 1. 本例的 JSON 数据是 Github 上面最受欢迎的 JavaScript 项目。请在网页上显示一个列表，列出这些项目。
 
-提示
+### 提示
 
 1. `this.state.loading`记录数据加载是否结束。只要数据请求没有结束，`this.state.loading`就一直是`true`，网页上显示`loading`。
 1. `this.state.error`保存数据请求失败时的错误信息。如果请求失败，`this.state.error`就是返回的错误对象，网页上显示报错信息。
@@ -273,21 +271,21 @@ projects.forEach(p => {
 
 ## ReCharts
 
-实验目的
+### 实验目的
 
 1. 了解如何使用第三方组件库。
 
-操作步骤
+### 操作步骤
 
 1. 浏览器打开`demos/recharts-demo/index.html`，查看效果。
 
 ## MobX
 
-实验目的
+### 实验目的
 
 1. 理解 MobX 框架
 
-操作目的
+### 操作目的
 
 1. 命令行进入`demos/mobx-demo/`目录，执行如下的命令。
 
@@ -298,7 +296,7 @@ $ npm start
 
 1. 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究代码。
 
-注意事项
+### 注意事项
 
 ```javascript
 @observer
@@ -720,3 +718,185 @@ router.get('/', function(req, res) {
 ### 练习
 
 1. URL 的查询字符串，比如`localhost:8080?name=Alice`里面的`name`，可以用`req.query.name`拿到。请修改一个路由，使之可以收到查询字符串，然后输出`'Hello ' + req.query.name`。
+
+## ESLint
+
+### 实验目的
+
+1. 学会使用 ESLint 进行代码检查。
+
+### 操作步骤
+
+1. 进入`demos/eslint-demo`目录，安装 ESLint。
+
+```bash
+$ cd demos/eslint-demo
+$ npm install eslint --save-dev
+```
+
+2. 通常，我们会使用别人已经写好的代码检查规则，这里使用的是 Airbnb 公司的规则。所以，还要安装 ESLint 这个规则模块。
+
+```bash
+$ npm install eslint-plugin-import eslint-config-airbnb-base --save-dev
+```
+
+上面代码中，`eslint-plugin-import`是运行这个规则集必须的，所以也要一起安装。
+
+3. ESLint 的配置文件是`.eslintrc.json`，放置在项目的根目录下面。新建这个文件，在里面指定使用 Airbnb 的规则。
+
+```javascript
+{
+  "extends": "airbnb-base"
+}
+```
+
+4. 打开项目的`package.json`，在`scripts`字段里面添加三个脚本。
+
+```javascript
+{
+  // ...
+  "scripts" : {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.js",
+    "lint-html": "eslint **/*.js -f html -o ./reports/lint-results.html",
+    "lint-fix": "eslint --fix **/*.js"
+  },
+  // ...
+}
+```
+
+除了原有的`test`脚本，上面代码新定义了三个脚本，它们的作用如下。
+
+- `lint`：检查所有`js`文件的代码
+- `lint-html`：将检查结果写入一个网页文件`./reports/lint-results.html`
+- `lint-fix`：自动修正某些不规范的代码
+
+5. 运行静态检查命令。
+
+```bash
+$ npm run lint
+
+  1:5  error    Unexpected var, use let or const instead  no-var
+  2:5  warning  Unexpected console statement              no-console
+
+✖ 2 problems (1 error, 1 warning)
+```
+
+正常情况下，该命令会从`index.js`脚本里面，检查出来两个错误：一个是不应该使用`var`命令，另一个是不应该在生产环境使用`console.log`方法。
+
+6. 修正错误。
+
+```bash
+$ npm run lint-fix
+```
+
+运行上面的命令以后，再查看`index.js`，可以看到`var x = 1;`被自动改成了`const x = 1;`。这样就消除了一个错误，但是还留下一个错误。
+
+7. 修改规则。
+
+由于我们想要允许使用`console.log`方法，因此可以修改`.eslintrc.json`，改变`no-console`规则。请将`.eslintrc.json`改成下面的样子。
+
+```javascript
+{
+  "extends": "airbnb-base",
+
+  "rules": {
+    "no-console": "off"
+  }
+}
+```
+
+再运行`npm run lint`，就不会报错了。
+
+```bash
+$ npm run lint
+```
+
+## Mocha
+
+### 实验目的
+
+1. 学会使用 Mocha 进行单元测试。
+
+### 操作步骤
+
+1. 进入`demos/mocha-demo`目录，安装 Mocha 和 Chai。
+
+```bash
+$ cd demos/mocha-demo
+$ npm install -D mocha
+$ npm install -D chai
+```
+
+2. 打开`add.js`文件，查看源码，我们要测试的就是这个脚本。
+
+```javascript
+function add(x, y) {
+  return x + y;
+}
+
+module.exports = add;
+```
+
+3. 编写一个测试脚本`add.test.js`。
+
+```javascript
+var add = require('./add.js');
+var expect = require('chai').expect;
+
+describe('加法函数的测试', function() {
+  it('1 加 1 应该等于 2', function() {
+    expect(add(1, 1)).to.be.equal(2);
+  });
+});
+```
+
+测试脚本与所要测试的源码脚本同名，但是后缀名为`.test.js`（表示测试）或者`.spec.js`（表示规格）。比如，`add.js`的测试脚本名字就是`add.test.js`。
+
+测试脚本里面应该包括一个或多个`describe`块，每个`describe`块应该包括一个或多个`it`块。
+
+`describe`块称为"测试套件"（test suite），表示一组相关的测试。它是一个函数，第一个参数是测试套件的名称（"加法函数的测试"），第二个参数是一个实际执行的函数。
+
+`it`块称为"测试用例"（test case），表示一个单独的测试，是测试的最小单位。它也是一个函数，第一个参数是测试用例的名称（"1 加 1 应该等于 2"），第二个参数是一个实际执行的函数。
+
+上面的测试脚本里面，有一句断言。
+
+```javascript
+expect(add(1, 1)).to.be.equal(2);
+```
+
+所谓"断言"，就是判断源码的实际执行结果与预期结果是否一致，如果不一致就抛出一个错误。上面这句断言的意思是，调用`add(1, 1)`，结果应该等于`2`。
+
+所有的测试用例（it块）都应该含有一句或多句的断言。它是编写测试用例的关键。断言功能由断言库来实现，Mocha本身不带断言库，所以必须先引入断言库。
+
+```javascript
+var expect = require('chai').expect;
+```
+
+断言库有很多种，Mocha并不限制使用哪一种。上面代码引入的断言库是`chai`，并且指定使用它的`expect`断言风格。
+
+4. 打开`package.json`文件，改写`scripts`字段的`test`脚本。
+
+```javascript
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+
+// 改成
+
+"scripts": {
+  "test": "mocha *.test.js"
+},
+```
+
+5. 命令行下，执行下面的命令，运行测试用例。
+
+```bash
+$ npm test
+```
+
+正常情况下，命令行会有提示，表示测试用例已经通过了。
+
+### 练习
+
+1. 请在`add.test.js`里面添加一个测试用例，测试`3`加上`-3`，`add`函数应该返回`0`。
