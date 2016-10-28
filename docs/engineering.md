@@ -39,7 +39,7 @@ Continuous integration（简称 CI）：
 
 ---
 
-## 示例：ESLint 的用法
+## 课堂练习：ESLint 的用法
 
 进入`demos/eslint-demo`目录，按照《操作指南》，完成练习。
 
@@ -92,6 +92,22 @@ Mocha 是目前最常用的测试框架。
 
 ---
 
-## 示例：Mocha 的用法
+## 课堂练习：Mocha 的用法
 
 进入`demos/mocha-demo`目录，按照《操作指南》，完成练习。
+
+---
+
+## 持续集成服务平台
+
+代码合并进主干以后，就可以进行自动构建和发布了。
+
+网上有很多 PaaS 平台，提供持续集成服务。
+
+Travis CI 就是其中最著名的一个，它可以根据你提供的脚本，自动完成构建和发布。
+
+![](./images/travis-ci.png)
+
+---
+
+## 课堂练习：Travis CI
