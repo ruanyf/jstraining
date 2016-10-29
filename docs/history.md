@@ -108,7 +108,7 @@ Backbone 将前端代码分成两个基本部分。
 - Model：管理数据
 - View：数据的展现
 
-![](./images/backbone-model-view.svg)
+![](./images/backbone-model-view.png)
 
 ---
 
@@ -152,7 +152,7 @@ Backbone 索性没有 Controller，只用事件监听来处理 UI 逻辑。
 
 以 Backbone 为例。
 
-![](./images/backbone-routing.svg)
+![](./images/backbone-routing.png)
 
 ---
 
