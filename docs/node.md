@@ -25,7 +25,7 @@ $ npm -v
 
 ---
 
-## 示例一：Node 的简单应用
+## 课堂练习：Node 的简单应用
 
 进入`demos/simple-app-demo`目录，参考《操作指南》，自己动手在 Node 里面，编写并编译一个前端脚本。
 
@@ -90,7 +90,7 @@ DELETE /v1/stores/1234
 
 ---
 
-## 示例二：REST API
+## 课堂练习：REST API
 
 打开`demos/rest-api-demo`，按照《操作指南》，熟悉 REST API 的基本用法。
 
@@ -104,7 +104,7 @@ Express 是最常用的 Node 框架，用来搭建 Web 应用。
 
 ---
 
-## 示例三：Express 搭建 Web 应用
+## 课堂练习：Express 搭建 Web 应用
 
 进入`demos/express-demo`目录，按照《操作指南》，学习使用 Express 搭建 Web 应用。
 

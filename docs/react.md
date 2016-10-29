@@ -75,7 +75,7 @@ Babel 用来在浏览器转换 JSX 语法，如果服务器已经转好了，浏
 
 ---
 
-## 示例一：JSX 语法
+## 示例：JSX 语法
 
 浏览器打开`demos/jsx-demo/index.html`，仔细查看源码。
 
@@ -88,7 +88,7 @@ ReactDOM.render(
 
 ---
 
-## 示例二：React 组件
+## 示例：React 组件
 
 React 允许用户定义自己的组件，插入网页。
 
@@ -109,7 +109,7 @@ React 允许用户定义自己的组件，插入网页。
 
 ---
 
-## 示例三：组件的参数
+## 示例：组件的参数
 
 组件可以从外部传入参数，内部使用`this.props`获取参数。
 
@@ -129,7 +129,7 @@ class MyTitle extends React.Component {
 
 ---
 
-## 示例四：组件的状态
+## 示例：组件的状态
 
 组件往往会有内部状态，通常与用户互动相关，使用`this.state`表示。
 
@@ -139,7 +139,7 @@ class MyTitle extends React.Component {
 
 ---
 
-## 示例五：React 组件实战
+## 示例：React 组件实战
 
 浏览器打开`demos/react-component-demo/index4.html`。
 
@@ -160,7 +160,7 @@ React 为组件的不同生命阶段，提供了近十个钩子方法。
 
 ---
 
-## 示例七：组件的生命周期
+## 示例：组件的生命周期
 
 组件可以通过 Ajax 请求，从服务器获取数据。Ajax 请求一般在`componentDidMount`方法里面发出。
 
@@ -237,6 +237,12 @@ class App extends React.Component {
 
 ---
 
+## 示例：MobX
+
+进入`demos/mobx-demo`目录，按照《操作说明》，理解 MobX 框架。
+
+---
+
 ## Redux 架构
 
 Redux 的核心概念
@@ -247,3 +253,8 @@ Redux 的核心概念
 
 ![](./images/redux.svg)
 
+---
+
+## 示例：Redux
+
+进入`demos/redux-demo`目录，按照《操作说明》，理解 Redux 框架。
