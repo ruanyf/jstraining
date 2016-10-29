@@ -93,7 +93,7 @@ Ajax 技术促成了 Web 2.0 的诞生。
 
 前端通过 Ajax 得到数据，因此也有了处理数据的需求。
 
-前端 MVC 框架的诞生
+前端代码变得也需要保存数据、处理数据、生成视图，这导致了前端 MVC 框架的诞生。
 
 - 2010年，Backbone.js
 
@@ -114,12 +114,12 @@ Backbone 将前端代码分成两个基本部分。
 
 ## 前端 Controller
 
-一般来说，前端 Controller 与后端不同
+Backbone 只有 M 和 V，没有 C。因为，前端 Controller 与后端不同。
 
-- 不需要处理业务逻辑
-- 只需要处理 UI 逻辑。
+- 不需要，也不应该处理业务逻辑
+- 只需要处理 UI 逻辑，响应用户的一举一动
 
-Backbone 索性没有 Controller，只用事件监听来处理 UI 逻辑。
+所以，前端 Controller 相对比较简单。Backbone 没有 C，只用事件来处理 UI 逻辑。
 
 ```javascript
   var AppView = Backbone.View.extend({
@@ -136,7 +136,7 @@ Backbone 索性没有 Controller，只用事件监听来处理 UI 逻辑。
 
 ## MVVM 模式
 
-另一些框架提出 MVVM 模式，用 View Model 代替 Controller。
+另一些框架提出 MVVM 模式，用 View Model 代替 Controller，以突出跟 Controller 的区别。
 
 - Model
 - View
@@ -148,9 +148,9 @@ Backbone 索性没有 Controller，只用事件监听来处理 UI 逻辑。
 
 ## Router
 
-前端还可以通过 URL 切换视图，这就是 Router（路由）。
+前端还有一种天然的方法，可以切换视图，那就是 URL。
 
-以 Backbone 为例。
+通过 URL 切换视图，这就是 Router（路由）的作用。以 Backbone 为例。
 
 ![](./images/backbone-routing.png)
 
@@ -174,7 +174,7 @@ App.Router = Backbone.Router.extend({
 
 ## 示例：Backbone Router
 
-打开`demos/backbone-demo/index.html`.
+打开`demos/backbone-demo/index.html`，按照[《操作说明》](../demos/README.md#backbone)，查看示例。
 
 ![](./images/backbone-demo.png)
 
@@ -188,7 +188,7 @@ App.Router = Backbone.Router.extend({
 > - 切换视图
 > - 用户交互
 
-这意味着，网页其实是单页应用程序。
+这意味着，网页其实是一个应用程序。
 
 > SPA = Single-page application
 
@@ -202,7 +202,7 @@ Google 公司推出的 Angular 是最流行的 MVC 前端框架。
 
 它的风格属于 HTML 语言的增强，核心概念是双向绑定。
 
-![](./images/angular.svg)
+![](./images/angular.png)
 
 ---
 
@@ -244,7 +244,7 @@ Vue.js 是现在很热门的一种前端 MVC 框架。
 
 Vue 的模板与数据，是双向绑定的。
 
-打开`demos/vue-demo/index1.html`。
+打开`demos/vue-demo/index1.html`，按照[《操作说明》](../demos/README.md#vue)，查看示例。
 
 ![](./images/vue-demo.png)
 
@@ -285,7 +285,7 @@ var journal = new Vue({
 
 ## REST 接口
 
-前后端通过接口通信。
+前后端分离以后，它们之间通过接口通信。
 
 后端暴露出接口，前端消费后端提供的数据。
 
