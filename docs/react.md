@@ -43,16 +43,17 @@ let myTitle = <h1>Hello, world!</h1>;
 
 1. JSX 语法的最外层，只能有一个节点。
 
-```javascript
-// 错误
-let myTitle = <p>Hello</p><p>World</p>;
-```
+  ```javascript
+  // 错误
+  let myTitle = <p>Hello</p><p>World</p>;
+  ```
+
 
 2. JSX 语法中可以插入 JavaScript 代码，使用大括号。
 
-```javascript
-let myTitle = <p>{'Hello ' + 'World'}</p>
-```
+  ```javascript
+  let myTitle = <p>{'Hello ' + 'World'}</p>
+  ```
 
 ---
 
