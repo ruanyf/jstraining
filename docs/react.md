@@ -269,7 +269,7 @@ Redux 的核心概念
 - 用户在 UI 上发出`action`。
 - `reducer`函数接收`action`，然后根据当前的`state`，计算出新的`state`。
 
-![](./images/redux.svg)
+![](./images/redux-architecture.png)
 
 ---
 
