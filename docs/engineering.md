@@ -41,7 +41,7 @@ Continuous integration（简称 CI）：
 
 ## 课堂练习：ESLint 的用法
 
-进入`demos/eslint-demo`目录，按照《操作指南》，完成练习。
+进入`demos/eslint-demo`目录，按照[《操作指南》](../demos/README.md#eslint)，完成练习。
 
 ---
 
@@ -94,7 +94,7 @@ Mocha 是目前最常用的测试框架。
 
 ## 课堂练习：Mocha 的用法
 
-进入`demos/mocha-demo`目录，按照《操作指南》，完成练习。
+进入`demos/mocha-demo`目录，按照[《操作指南》](../demos/README.md#mocha)，完成练习。
 
 ---
 
@@ -111,3 +111,6 @@ Travis CI 就是其中最著名的一个，它可以根据你提供的脚本，�
 ---
 
 ## 课堂练习：Travis CI
+
+按照[《操作说明》](../demos/README.md#travis-ci)，完成练习。
+
