@@ -131,7 +131,7 @@ Mocha 是目前最常用的测试框架。
 
 ## 示例：Nightmare
 
-打开`demos/nightmare-demo/`，按照[《操作说明》](./demos/README.md#nightmare)，完成操作。
+打开`demos/nightmare-demo/`，按照[《操作说明》](../demos/README.md#nightmare)，完成操作。
 
 ---
 
