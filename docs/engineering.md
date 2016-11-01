@@ -94,7 +94,44 @@ Mocha 是目前最常用的测试框架。
 
 ## 课堂练习：Mocha 的用法
 
-进入`demos/mocha-demo`目录，按照[《操作指南》](../demos/README.md#mocha)，完成练习。
+进入`demos/mocha-demo`目录，按照[《操作指南》](../demos/README.md#mocha)，练习写单元测试。
+
+---
+
+## 功能测试
+
+功能测试指的是，站在外部用户的角度，测试软件的某项功能。
+
+与内部代码实现无关，只测试功能是否正常。
+
+很多时候，单元测试都可以通过，但是整体功能会失败。
+
+![](./images/functional-test.jpg)
+
+---
+
+## 前端的功能测试
+
+功能测试必须在真正浏览器做，现在有四种方法。
+
+- 使用本机安装的浏览器
+- 使用 Selenium Driver
+- 使用 PhantomJS
+- 使用 Electron
+
+---
+
+## Nightmare
+
+- 使用 Electron 模拟真实浏览器环境
+- 提供大量人性化、易用的 API
+- 官网：nightmarejs.org
+
+---
+
+## 示例：Nightmare
+
+打开`demos/nightmare-demo/`，按照[《操作说明》](./demos/README.md#nightmare)，完成操作。
 
 ---
 

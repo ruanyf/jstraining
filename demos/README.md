@@ -23,6 +23,7 @@
 - 前端工程简介
   - [ESLint](#eslint)
   - [Mocha](#mocha)
+  - [Nightmare](#nightmare)
   - [Travis CI](#travis-ci)
 
 ## Backbone
@@ -907,6 +908,141 @@ $ npm test
 ### 练习
 
 1. 请在`add.test.js`里面添加一个测试用例，测试`3`加上`-3`，`add`函数应该返回`0`。
+
+## Nightmare
+
+### 实验目的
+
+1. 学会使用 Nightmare 完成功能测试。
+
+### 操作步骤
+
+（1）进入`./demos/nightmare-demo`目录，安装依赖。
+
+```bash
+$ cd demos/nightmare-demo
+$ npm install
+```
+
+注意，Nightmare 会先安装 Electron，而 Electron 的安装需要下载境外的包，有时会连不上，导致安装失败。只有完成了安装，才能完成这个练习。
+
+（2）查看一下浏览器自动化脚本`taobao.test.js`。
+
+```javascript
+var Nightmare = require('nightmare');
+var nightmare = Nightmare({ show: true });
+```
+
+上面代码表示新建一个 Nightmare 实例，并且运行功能中，自动打开浏览器窗口。
+
+```javascript
+nightmare
+  .goto('https://www.taobao.com/')
+  .type('#q', '电视机')
+  .click('form[action*="/search"] [type=submit]')
+  .wait('#mainsrp-itemlist')
+  .evaluate(function () {
+    return document.querySelector('#mainsrp-itemlist .item .ctx-box a.J_ClickStat')
+      .textContent.trim();
+  })
+  .end()
+```
+
+上面代码表示，打开淘宝首页，在搜索框键入`电视机`，点击”搜索“按钮，等待`#mainsrp-itemlist`元素出现，在页面内注入（`evaluate`）代码，将执行结果返回。
+
+```javascript
+  .then(function (result) {
+    console.log(result);
+  })
+  .catch(function (error) {
+    console.error('Search failed:', error);
+  });
+```
+
+Nightmare 会返回一个 Promise 对象，`then`方法指定操作成功的回调函数，`catch`方法指定操作失败的回调函数。
+
+（3）命令行下运行这个示例脚本。
+
+```bash
+$ node taobao.test.js
+```
+
+正常情况下，运行结束后，命令行会显示淘宝”电视机“搜索结果的第一项。
+
+（4）浏览器打开`index.html`文件，这是 React 练习时做过的一个例子，点击`Hello World`，标题会变成`Hello Clicked`。我们就要编写测试脚本，测试这个功能。
+
+（5）打开测试脚本`test.js`。
+
+```javascript
+var Nightmare = require('nightmare');
+var expect = require('chai').expect;
+var fork = require('child_process').fork;
+
+describe('test index.html', function() {
+  var child;
+
+  before(function (done) {
+    child = fork('./server.js');
+    child.on('message', function (msg) {
+      if (msg === 'listening') {
+        done();
+      }
+    });
+  });
+
+  after(function () {
+    child.kill();
+  });
+```
+
+上面代码中，`before`和`after`是 Mocha 提供的两个钩子方法，分别在所有测试开始前和结束后运行。这里，我们在`before`方法里面，新建一个子进程，用来启动 HTTP 服务器；测试结束后，再杀掉这个子进程。
+
+注意，`before`方法的参数是一个函数，它接受`done`作为参数。`done`是 Mocha 提供的一个函数，用来表示异步操作完成。如果不调用`done`，Mocha 就会认为异步操作没有结束，一直停在这一步，不往下执行，从而导致超市错误。
+
+子进程脚本`server.js`的代码非常简单，只有四行。
+
+```javascript
+var httpServer = require('http-server');
+var server = httpServer.createServer();
+server.listen(8080);
+process.send('listening');
+```
+
+上面代码中，我们在`8080`端口启动 HTTP 服务器，然后向父进程发消息，表示启动完成。
+
+（6）真正的自动化测试脚本如下。
+
+```javascript
+  it('点击后标题改变', function(done) {
+    var nightmare = Nightmare({ show: true });
+    nightmare
+      .goto('http://127.0.0.1:8080/index.html')
+      .click('h1')
+      .wait(1000)
+      .evaluate(function () {
+        return document.querySelector('h1').textContent;
+      })
+      .end()
+      .then(function(text) {
+        expect(text).to.equal('Hello Clicked');
+        done();
+      })
+  });
+```
+
+上面代码中，首先打开网页，点击`h1`元素，然后等待 1 秒钟，注入脚本获取`h1`元素的文本内容。接着，在`then`方法里面，做一个断言，判断获取的文本是否正确。
+
+（7）运行这个测试脚本。
+
+```bash
+$ npm test
+```
+
+如果一切正常，命令行下会显示测试通过。
+
+### 练习
+
+1. 你可以改变`h1`的背景色或前景色，然后编写测试用例，验证浏览器最后渲染的颜色是否正确。（提示：可以使用`Window.getComputedStyle()`方法，获取元素的最终颜色。）
 
 ## Travis CI
 

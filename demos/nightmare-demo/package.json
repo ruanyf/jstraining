@@ -1,0 +1,18 @@
+{
+  "name": "nightmare-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "babel.min.js",
+  "scripts": {
+    "test": "mocha -t 15000 test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "http-server": "^0.9.0",
+    "mocha": "^3.1.2",
+    "nightmare": "^2.8.1"
+  }
+}
