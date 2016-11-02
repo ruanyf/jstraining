@@ -921,6 +921,12 @@ $ npm test
 
 ```bash
 $ cd demos/nightmare-demo
+
+# Linux & Mac
+$ env ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/" npm install
+
+# Windows
+$ set ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"
 $ npm install
 ```
 
