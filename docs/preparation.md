@@ -45,7 +45,11 @@ Postman 是一个 HTTP 通信测试工具，REST API 的练习会用到它。
 所有的讲义和练习源码，都是开源的，网址是 [github.com/ruanyf/jstraining](https://github.com/ruanyf/jstraining)。执行下面的命令，将这个库拷贝到你的硬盘上。
 
 ```bash
+# Linux & Mac
 $ git clone git@github.com:ruanyf/jstraining.git
+
+# Windows
+$ git clone https://github.com/ruanyf/jstraining.git
 ```
 
 如果因为种种原因，Git 命令行无法使用，也可以直接下载压缩包，地址是 https://github.com/ruanyf/jstraining/archive/master.zip 。

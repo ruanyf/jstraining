@@ -923,14 +923,14 @@ $ npm test
 $ cd demos/nightmare-demo
 
 # Linux & Mac
-$ env ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/" npm install
+$ env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ npm install
 
 # Windows
-$ set ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"
+$ set ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
 $ npm install
 ```
 
-注意，Nightmare 会先安装 Electron，而 Electron 的安装需要下载境外的包，有时会连不上，导致安装失败。只有完成了安装，才能完成这个练习。
+注意，Nightmare 会先安装 Electron，而 Electron 的安装需要下载境外的包，有时会连不上，导致安装失败。所以，这里先设置了环境变量，指定使用国内的 Electron 源，然后才执行安装命令。
 
 （2）查看一下浏览器自动化脚本`taobao.test.js`。
 
