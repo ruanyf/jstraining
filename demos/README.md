@@ -558,7 +558,7 @@ $ npm install -S json-server
 $ npm run server
 ```
 
-（5）打开 Chrome 浏览器的 Postman 应用。依次向`http://127.0.0.1:3000/posts`、`http://127.0.0r.1:3000/posts/1`发出`GET`请求，查看结果。
+（5）打开 Chrome 浏览器的 Postman 应用。依次向`http://127.0.0.1:3000/posts`、`http://127.0.0.1:3000/posts/1`发出`GET`请求，查看结果。
 
 （6）向`http://127.0.0.1:3000/comments`发出`POST`请求。注意，数据体`Body`要选择`x-www-form-urlencoded`编码，然后依次添加下面两个字段。
 
@@ -692,10 +692,12 @@ $ node app3.js
 
 然后，在 Chrome 浏览器的 Postman 插件里面，向`http://127.0.0.1:8080/home`发出一个`POST`请求。数据体的编码方法设为`x-www-form-urlencoded`，里面设置一个`name`字段，值可以随便取，假定设为`Alice`。也就是说，发出这样一个请求。
 
-```javascript
-GET /home HTTP/1.1
+```
+POST /home HTTP/1.1
+Host: 127.0.0.1:8080
+Content-Type: application/x-www-form-urlencoded
 
-name: Alice
+name=Alice
 ```
 
 如果一切正常，服务器会返回一段 JSON 信息。
