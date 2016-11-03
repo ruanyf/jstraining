@@ -36,7 +36,7 @@
 
 1. 浏览器打开[`demos/backbone-demo/index.html`](./backbone-demo/index.html)
 1. 点击页面上的链接，注意浏览器 URL 的变化
-1. 仔细查看`js/main.js`的源码，看懂 Router 组件的使用方式
+1. 仔细查看[`js/main.js`](./backbone-demo/js/main.js)的源码，看懂 Router 组件的使用方式
 
 ## Angular
 
@@ -48,7 +48,7 @@
 
 1. 浏览器打开[`demos/angular-demo/index.html`](./angular-demo/index.html)
 1. 在输入框填入内容，注意页面变化
-1. 查看`index.html`的源码，理解 Angular 对 HTML 标签的增强
+1. 查看[`index.html`](./angular-demo/index.html)的源码，理解 Angular 对 HTML 标签的增强
 
 ## Vue
 
@@ -65,6 +65,7 @@
 ### 注意事项
 
 1. [`index2.html`](./vue-demo/index2.html)是一个稍微复杂的例子，模板如何绑定数据对象的一个字段。
+2. [`index3.html`](./vue-demo/index3.html)是事件绑定模板的例子。
 
 ## JSX
 
