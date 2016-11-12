@@ -136,11 +136,11 @@ Backbone 只有 M 和 V，没有 C。因为，前端 Controller 与后端不同�
 
 ## MVVM 模式
 
-另一些框架提出 MVVM 模式，用 View Model 代替 Controller，以突出跟 Controller 的区别。
+另一些框架提出 MVVM 模式，用 View Model 代替 Controller。
 
 - Model
 - View
-- View-Model：简化的 Controller，只用来部署 UI 逻辑
+- View-Model：简化的 Controller，唯一作用就是为 View 提供处理好的数据，不含其他逻辑。
 
 ![](./images/mvvm.png)
 

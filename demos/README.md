@@ -98,6 +98,7 @@
 ### 注意事项
 
 1. `class MyTitle extends React.Component`是 ES6 语法，表示自定义一个`MyTitle`类，该类继承了基类`React.Component`的所有属性和方法。
+1. React 规定，自定义组件的第一个字母必须大写，比如`MyTitle`不能写成`myTitle`，以便与内置的原生类相区分。
 1. 每个组件都必须有`render`方法，定义输出的样式。
 1. `<MyTitle/>`表示生成一个组件类的实例，每个实例一定要有闭合标签，写成`<MyTilte></MyTitle>`也可。
 

@@ -10,6 +10,7 @@ Node 是服务器的 JavaScript 运行环境，提供 API 与操作系统互动�
 
 - 开发前端应用
 - 快速搭建服务
+- 架设网站
 
 ---
 
@@ -35,6 +36,7 @@ $ npm -v
 
 1. 模块机制
 1. 版本管理
+1. 对外发布
 1. 持续集成的标准开发流程
 
 ---
@@ -69,6 +71,16 @@ URL 是资源的唯一识别符。
 - /store/1
 - /store/2
 - /store/1/employee/2
+
+---
+
+## 查询字符串
+
+查询字符串表示对所请求资源的约束条件。
+
+- GET /zoos/1/animals?limit=10
+- GET /zoos/1/animals?limit=10&offset=10
+- GET /animals?zoo_id=1
 
 ---
 

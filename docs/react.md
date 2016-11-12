@@ -208,7 +208,7 @@ ReCharts 是一个 React 图表组件库。http://recharts.org/
 
 React 只是一个 DOM 的抽象层，并没有解决应用程序的架构问题：大型应用程序应该如何组织代码？
 
-Facebook 提出 Flow 架构的概念。
+Facebook 提出 Flux 架构的概念。
 
 ![](./images/flow.png)
 
@@ -219,7 +219,7 @@ Facebook 提出 Flow 架构的概念。
 ## 目前最流行的两个 React 框架
 
 - MobX：采用观察者模式，自动响应数据变化
-- Redux：Flow 的函数式实现
+- Redux：Flux 的函数式实现
 
 ---
 
