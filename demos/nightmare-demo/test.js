@@ -18,7 +18,7 @@ describe('test index.html', function() {
     child.kill();
   });
 
-  it('点击后标题改变', function(done) {
+  it('点击后标题改变', function (done) {
     var nightmare = Nightmare({ show: true });
     nightmare
       .goto('http://127.0.0.1:8080/index.html')
@@ -33,5 +33,6 @@ describe('test index.html', function() {
         done();
       })
   });
+
 });
 

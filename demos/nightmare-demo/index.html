@@ -24,7 +24,10 @@
     }
 
     render() {
-      return <h1 onClick={this.handleClick.bind(this)}>
+      return <h1
+        onClick={this.handleClick.bind(this)}
+        style={{color: 'red'}}
+      >
         {'Hello ' + this.state.text}
       </h1>;
     }
