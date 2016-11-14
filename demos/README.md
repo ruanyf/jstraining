@@ -729,7 +729,9 @@ router.get('/', function(req, res) {
 
 ### 练习
 
-1. URL 的查询字符串，比如`localhost:8080?name=Alice`里面的`name`，可以用`req.query.name`拿到。请修改一个路由，使之可以收到查询字符串，然后输出`'Hello ' + req.query.name`。
+1. 请增加一个中间件，服务器每次收到用户请求，会在服务器的控制台打印出收到请求的时间。
+
+2. URL 的查询字符串，比如`localhost:8080?name=Alice`里面的`name`，可以用`req.query.name`拿到。请修改一个路由，使之可以收到查询字符串，然后输出`'Hello ' + req.query.name`。
 
 ## ESLint
 
@@ -950,15 +952,15 @@ nightmare
   .goto('https://www.taobao.com/')
   .type('#q', '电视机')
   .click('form[action*="/search"] [type=submit]')
-  .wait('#mainsrp-itemlist')
+  .wait('#spulist-grid')
   .evaluate(function () {
-    return document.querySelector('#mainsrp-itemlist .item .ctx-box a.J_ClickStat')
+    return document.querySelector('#spulist-grid .grid-item .info-cont')
       .textContent.trim();
   })
   .end()
 ```
 
-上面代码表示，打开淘宝首页，在搜索框键入`电视机`，点击”搜索“按钮，等待`#mainsrp-itemlist`元素出现，在页面内注入（`evaluate`）代码，将执行结果返回。
+上面代码表示，打开淘宝首页，在搜索框键入`电视机`，点击”搜索“按钮，等待`#spulist-grid`元素出现，在页面内注入（`evaluate`）代码，将执行结果返回。
 
 ```javascript
   .then(function (result) {
@@ -1052,7 +1054,7 @@ $ npm test
 
 ### 练习
 
-1. 你可以改变`h1`的背景色或前景色，然后编写测试用例，验证浏览器最后渲染的颜色是否正确。（提示：可以使用`Window.getComputedStyle()`方法，获取元素的最终颜色。）
+1. 请写一个测试用例，验证`<h1>`的字体颜色是红色。（提示：可以使用`Window.getComputedStyle()`方法，获取元素的最终样式。）
 
 ## Travis CI
 
