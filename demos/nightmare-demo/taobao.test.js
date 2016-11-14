@@ -5,9 +5,9 @@ nightmare
   .goto('https://www.taobao.com/')
   .type('#q', '电视机')
   .click('form[action*="/search"] [type=submit]')
-  .wait('#mainsrp-itemlist')
+  .wait('#spulist-grid')
   .evaluate(function () {
-    return document.querySelector('#mainsrp-itemlist .item .ctx-box a.J_ClickStat')
+    return document.querySelector('#spulist-grid .grid-item .info-cont')
       .textContent.trim();
   })
   .end()
