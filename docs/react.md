@@ -152,7 +152,8 @@ React 为组件的不同生命阶段，提供了近十个钩子方法。
 
 - `componentWillMount()`：组件加载前调用
 - `componentDidMount()`：组件加载后调用
-- `componentDidUpdate()`: 组件更新前调用
+- `componentWillUpdate()`: 组件更新前调用
+- `componentDidUpdate()`: 组件更新后调用
 - `componentWillUnmount()`：组件卸载前调用
 
 我们可以利用这些钩子，自动完成一些操作。
