@@ -118,7 +118,7 @@ Express 是最常用的 Node 框架，用来搭建 Web 应用。
 
 ## 课堂练习：Express 搭建 Web 应用
 
-进入`demos/express-demo`目录，按照[《操作指南》](demos/README.md#express)，学习使用 Express 搭建 Web 应用。
+进入`demos/express-demo`目录，按照[《操作指南》](../demos/README.md#express)，学习使用 Express 搭建 Web 应用。
 
 ---
 

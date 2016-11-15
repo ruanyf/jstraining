@@ -640,7 +640,26 @@ $ node app1.js
 
 然后，命令行下按 Ctrl + C，退出这个进程。
 
-（4）打开`app2.js`，查看新增的那个路由。
+（4）通过环境变量，自定义启动端口。
+
+假定我们指定必须启动在`7070`端口，命令行可以这样操作。
+
+```bash
+# Linux & Mac
+$ PORT=7070 node app1.js
+
+# windows
+$ set PORT=7070
+$ node app1.js
+```
+
+浏览器就可以访问`localhost:7070/home`了。
+
+然后，命令行下按 Ctrl + C，退出这个进程。
+
+思考题：Node 应用能否直接在`80`端口启动？
+
+（5）打开`app2.js`，查看新增的那个路由。
 
 ```javascript
 router.get('/:name', function(req, res) {
@@ -660,7 +679,7 @@ $ node app2.js
 
 然后，命令行下按 Ctrl + C，退出这个进程。
 
-（5）打开`app3.js`，先查看页面头部新增的两行代码。
+（6）打开`app3.js`，先查看页面头部新增的两行代码。
 
 ```javascript
 var express    = require('express');
@@ -710,7 +729,7 @@ name=Alice
 }
 ```
 
-（6）打开`app4.js`，查看在所有路由之前新增的那个函数。
+（7）打开`app4.js`，查看在所有路由之前新增的那个函数。
 
 ```javascript
 var router = express.Router();
@@ -1068,10 +1087,14 @@ $ npm test
 
 （2）访问这个代码库[`github.com/ruanyf/travis-ci-demo`](https://github.com/ruanyf/travis-ci-demo)，点击右上角的`Fork`按钮，将它克隆到你自己的空间里面。
 
-（3）将你`fork`的代码库，克隆到本地。
+（3）将你`fork`的代码库，克隆到本地。注意，要将下面网址之中的`[your_username]`改成你的 Github 用户名。
 
 ```bash
+// Linux & Mac
 $ git clone git@github.com:[your_username]/travis-ci-demo.git
+
+// Windows
+$ git clone https://github.com:[your_username]/travis-ci-demo
 ```
 
 （4）使用你的 Github 账户，登录 [Travis CI](https://travis-ci.org/auth) 的首页。然后，访问 [Profile](https://travis-ci.org/profile) 页面，选定`travis-ci-demo`代码库运行自动构建。
