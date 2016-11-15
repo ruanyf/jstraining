@@ -63,6 +63,8 @@ Web 应用越来越复杂，意味着更可能出错。测试是提高代码质�
 - 单元测试（unit testing）
 - 功能测试（feature testing）
 - 集成测试（integration testing）
+- 端对端测试 (End-to-End testing）
+
 
 ---
 
@@ -169,4 +171,3 @@ Travis CI 就是其中最著名的一个，它可以根据你提供的脚本，�
 ## 课堂练习：Travis CI
 
 按照[《操作说明》](../demos/README.md#travis-ci)，完成练习。
-
