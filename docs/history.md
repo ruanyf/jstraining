@@ -142,6 +142,8 @@ Backbone 只有 M 和 V，没有 C。因为，前端 Controller 与后端不同�
 - View
 - View-Model：简化的 Controller，唯一作用就是为 View 提供处理好的数据，不含其他逻辑。
 
+本质：view 绑定 view-model，视图与数据模型强耦合。数据的变化实时反映在 view 上，不需要手动处理。
+
 ![](./images/mvvm.png)
 
 ---
