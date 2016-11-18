@@ -19,5 +19,5 @@ export default (props) => (
   </div>
 );
 
-export default MyComponent;
+// export default MyComponent;
 
