@@ -134,20 +134,6 @@ Backbone 只有 M 和 V，没有 C。因为，前端 Controller 与后端不同�
 
 ---
 
-## MVVM 模式
-
-另一些框架提出 MVVM 模式，用 View Model 代替 Controller。
-
-- Model
-- View
-- View-Model：简化的 Controller，唯一作用就是为 View 提供处理好的数据，不含其他逻辑。
-
-本质：view 绑定 view-model，视图与数据模型强耦合。数据的变化实时反映在 view 上，不需要手动处理。
-
-![](./images/mvvm.png)
-
----
-
 ## Router
 
 前端还有一种天然的方法，可以切换视图，那就是 URL。
@@ -182,6 +168,20 @@ App.Router = Backbone.Router.extend({
 
 ---
 
+## MVVM 模式
+
+另一些框架提出 MVVM 模式，用 View Model 代替 Controller。
+
+- Model
+- View
+- View-Model：简化的 Controller，唯一作用就是为 View 提供处理好的数据，不含其他逻辑。
+
+本质：view 绑定 view-model，视图与数据模型强耦合。数据的变化实时反映在 view 上，不需要手动处理。
+
+![](./images/mvvm.png)
+
+---
+
 ## SPA
 
 前端可以做到：
@@ -200,7 +200,7 @@ App.Router = Backbone.Router.extend({
 
 ## Angular
 
-Google 公司推出的 Angular 是最流行的 MVC 前端框架。
+Google 公司推出的 Angular 是最流行的 MVVM 前端框架。
 
 它的风格属于 HTML 语言的增强，核心概念是双向绑定。
 
@@ -352,6 +352,16 @@ Node = JavaScript + 操作系统 API
 - 成本更低
 
 通用性好、能够快速产出的技术最终会赢，单个程序员的生产力要求越来越高。
+
+---
+
+## H5 就是一个最好的例子
+
+为什么 H5 技术会赢得移动端？
+
+- 开发速度快：Native 需要重新编译才能看到结果，H5 是即时输出
+- 开发成本低：Native 需要两个开发团队，H5 只要一个
+- 快速发布：安卓 Native 新版本需要24小时，iOS 需要 3 ～ 4 天，H5 可以随时更新
 
 ---
 
