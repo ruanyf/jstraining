@@ -304,7 +304,7 @@ $ npm install
 $ npm start
 ```
 
-（2） 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究代码。
+（2） 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究`app/`目录下面的代码。
 
 ### 注意事项
 
@@ -317,7 +317,7 @@ class App extends React.Component {
 }
 ```
 
-`@observer`是一种新的语法，表示对整个类执行指定的函数。
+`@observer`是一种新的语法，叫做“装饰器”，表示对整个类的行为进行修改，即将`App`类作为参数传入`observer`函数。这里的意思是，整个`App`类都是一个“观察者”，观察`store`的变化，只要一有变化，立刻重新渲染。
 
 数据保存在`Store`里面。`Store`的属性分成两种：被观察的属性（`@observable`），和自动计算得到的属性`@computed`。
 

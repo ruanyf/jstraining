@@ -10,7 +10,9 @@ class App extends React.Component {
     return (
       <div className="index">
         <p>{this.props.store.decorated}</p>
-        <input defaultValue={this.props.store.name} onChange={(event) => this.props.store.name = event.currentTarget.value}
+        <input
+          defaultValue={this.props.store.name}
+          onChange={(event) => this.props.store.name = event.currentTarget.value}
         />
       </div>
     );
