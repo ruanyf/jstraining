@@ -154,7 +154,7 @@ app.use('/home', router);
 
 ```javascript
 router.use(function(req, res, next) {
-  console.log('Thers is a requesting.');
+  console.log('There is a requesting.');
   next();
 });
 ```
