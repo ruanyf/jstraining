@@ -12,7 +12,7 @@
   - [React 组件的参数](#react-组件的参数)
   - [React 组件的状态](#react-组件的状态)
   - [React 组件实战](#react-组件实战)
-  - [React 组件的生命周期](#react-组件的声明周期)
+  - [React 组件的生命周期](#react-组件的生命周期)
   - [ReCharts](#recharts)
   - [MobX](#mobx)
   - [Redux](#redux)
