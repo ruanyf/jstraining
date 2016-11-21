@@ -234,7 +234,7 @@ Google 公司推出的 Angular 是最流行的 MVVM 前端框架。
 
 ## Vue
 
-Vue.js 是现在很热门的一种前端 MVC 框架。
+Vue.js 是现在很热门的一种前端 MVVM 框架。
 
 它的基本思想与 Angular 类似，但是用法更简单，而且引入了响应式编程的概念。
 
