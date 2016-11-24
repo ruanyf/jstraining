@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mobx Demo</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="./react-15.1.0.js"></script>
+<script src="./react-dom-15.1.0.js"></script>
+<script src="./babel.min.js"></script>
+<script src="./mobx.umd.js"></script>
+<script src="./mobx-react.js"></script>
+<script type="text/babel">
+const {observable, computed} = mobx;
+const {observer} = mobxReact;
+const {Component} = React;
+const {render}  = ReactDOM
+
+const person = observable({
+  name: "张三",
+  age: 31
+});
+
+const App = observer(
+  ({ person }) => <h1>{ person.name }</h1>
+);
+
+render(<App person={person} />, document.getElementById('app'));
+
+person.name = "李四";
+</script>
+</body>
+</html>

@@ -297,14 +297,16 @@ projects.forEach(p => {
 
 ### 操作步骤
 
-（1） 命令行进入`demos/mobx-demo/`目录，执行如下的命令。
+（1）浏览器打开`demos/mobx-demo/browser-demo/index.html`，仔细查看源码
+
+（2） 命令行进入`demos/mobx-demo/`目录，执行如下的命令。
 
 ```bash
 $ npm install
 $ npm start
 ```
 
-（2） 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究`app/`目录下面的代码。
+（3） 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究`app/`目录下面的代码。
 
 ### 注意事项
 

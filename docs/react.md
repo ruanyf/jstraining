@@ -206,6 +206,33 @@ ReCharts 是一个 React 图表组件库。http://recharts.org/
 
 ---
 
+## React 的核心思想
+
+View 是 State 的输出。
+
+```javascript
+view = f(state)
+```
+
+只要 State 发生变化，View 也要随之变化。
+
+---
+
+React 的本质是将图形界面（GUI）函数化。
+
+```javascript
+const person = {
+  name: "michel",
+  age: 31
+}
+
+const App = ({ person }) => <h1>{ person.name }</h1>
+
+ReactDOM.render(<App person={person} />, document.body)
+```
+
+---
+
 ## React 应用的架构
 
 React 只是一个 DOM 的抽象层，并没有解决应用程序的架构问题：大型应用程序应该如何组织代码？
@@ -218,25 +245,43 @@ Facebook 提出 Flux 架构的概念。
 
 ---
 
-## 目前最流行的两个 React 框架
+## 目前最流行的两个 React 架构
 
-- MobX：采用观察者模式，自动响应数据变化
-- Redux：Flux 的函数式实现
+React 架构的最重要作用：管理 Store 与 View 之间的关系。
+
+- MobX：响应式（Reative）管理，state 是可变对象，适合中小型项目
+- Redux：函数式（Functional）管理，state 是不可变对象，适合大型项目
 
 ---
 
 ## MobX 架构
 
-MobX 的核心概念，就是组件是观察者，一旦`Store`有变化，会立刻被组件观察到，从而引发重新渲染。
+MobX 的核心是观察者模式。
+
+- Store 是被观察者（observable）
+- 组件是观察者（observer）
+
+一旦`Store`有变化，会立刻被组件观察到，从而引发重新渲染。
+
+---
+
+## MobX 的最简单例子
 
 ```javascript
-@observer
-class App extends React.Component {
-  render() {
-    // ...
-  }
-}
+const {observable, computed} = mobx;
+const {observer} = mobxReact;
+
+const person = observable({name: "张三", age: 31});
+
+const App = observer(
+  ({ person }) => <h1>{ person.name }</h1>
+);
+
+ReactDOM.render(<App person={person} />, document.body);
+person.name = "李四";
 ```
+
+代码：`demos/mobx-demo/browser-demo`目录
 
 ---
 
