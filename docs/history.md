@@ -129,7 +129,7 @@ Backbone 只有 M 和 V，没有 C。因为，前端 Controller 与后端不同�
       "click #clear-completed": "clearCompleted",
       "click #toggle-all": "toggleAllComplete"
     },
-  }
+  });
 ```
 
 ---
