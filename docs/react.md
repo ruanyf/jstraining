@@ -233,15 +233,52 @@ ReactDOM.render(<App person={person} />, document.body)
 
 ---
 
-## React 应用的架构
+## React 没有解决的问题
 
-React 只是一个 DOM 的抽象层，并没有解决应用程序的架构问题：大型应用程序应该如何组织代码？
+React 本身只是一个 DOM 的抽象层，使用组件构建虚拟 DOM。
 
-Facebook 提出 Flux 架构的概念。
+如果开发大应用，还需要解决两个问题。
+
+- 架构：大型应用程序应该如何组织代码？
+- 通信：组件之间如何通信？
+
+---
+
+## 架构问题
+
+React 只是视图层的解决方案，可以用于任何一种架构。
+
+- MVC
+- MVVM
+- Observer
+- Reactive
+- ...
+
+到底哪一种架构最合适 React ？
+
+---
+
+## 通信问题
+
+组件会发生三种通信。
+
+- 向子组件发消息
+- 向父组件发消息
+- 向其他组件发消息
+
+React 只提供了一种通信手段：传参。对于大应用，很不方便。
+
+---
+
+## Flux 架构
+
+Facebook 提出 Flux 架构的概念，被认为是 React 应用的标准架构。
 
 ![](./images/flow.png)
 
-最大特点：数据单向流动
+最大特点：数据单向流动。与 MVVM 的数据双向绑定，形成鲜明对比。
+
+Flux 只是一个概念，有30多种实现。
 
 ---
 
@@ -249,7 +286,7 @@ Facebook 提出 Flux 架构的概念。
 
 React 架构的最重要作用：管理 Store 与 View 之间的关系。
 
-- MobX：响应式（Reative）管理，state 是可变对象，适合中小型项目
+- MobX：响应式（Reactive）管理，state 是可变对象，适合中小型项目
 - Redux：函数式（Functional）管理，state 是不可变对象，适合大型项目
 
 ---
