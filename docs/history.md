@@ -200,11 +200,11 @@ App.Router = Backbone.Router.extend({
 
 传统的架构
 
-![](./images/archetecture-old.png)
+![](./images/architecture-old.png)
 
 单页应用的架构
 
-![](./images/archetecture-new.png)
+![](./images/architecture-new.png)
 
 多了一个前端 MVC 层
 

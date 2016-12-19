@@ -359,7 +359,7 @@ Redux 的核心概念
 
 ## Redux 应用的架构
 
-![](./images/archetecture-redux.png)
+![](./images/architecture-redux.png)
 
 Redux 层保存所有状态，React 组件拿到状态以后，渲染出 HTML 代码。
 
