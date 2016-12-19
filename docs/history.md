@@ -198,6 +198,18 @@ App.Router = Backbone.Router.extend({
 
 ---
 
+传统的架构
+
+![](./images/archetecture-old.png)
+
+单页应用的架构
+
+![](./images/archetecture-new.png)
+
+多了一个前端 MVC 层
+
+---
+
 ## Angular
 
 Google 公司推出的 Angular 是最流行的 MVVM 前端框架。

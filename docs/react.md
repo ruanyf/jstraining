@@ -357,6 +357,14 @@ Redux 的核心概念
 
 ---
 
+## Redux 应用的架构
+
+![](./images/archetecture-redux.png)
+
+Redux 层保存所有状态，React 组件拿到状态以后，渲染出 HTML 代码。
+
+---
+
 ## 示例：Redux
 
 进入`demos/redux-demo`目录，按照[《操作说明》](../demos/README.md#redux)，理解 Redux 框架。
