@@ -130,7 +130,7 @@ Mocha 是目前最常用的测试框架。
 
 - 使用 Electron 模拟真实浏览器环境
 - 提供大量人性化、易用的 API
-- 官网：nightmarejs.org
+- 官网：[nightmarejs.org](http://www.nightmarejs.org/)
 
 ---
 
