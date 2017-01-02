@@ -192,7 +192,7 @@ React-Bootstrap：https://react-bootstrap.github.io/
 
 ReCharts 是一个 React 图表组件库。http://recharts.org/
 
-浏览器打开`demos/recharts-demo/index.html`，按照[《操作说明》](../demos/README.md#recharts)，仔细查看源码。
+浏览器打开`demos/recharts-demo/index.html`，按照[《操作说明》](../demos/README.md#recharts)，仔细查看源码，体会 JSX 语法对表达复杂组件的优势。
 
 ```html
 <LineChart width={1000} height={400} data={data}>
@@ -214,7 +214,7 @@ View 是 State 的输出。
 view = f(state)
 ```
 
-只要 State 发生变化，View 也要随之变化。
+上式中，`f`表示函数关系。只要 State 发生变化，View 也要随之变化。
 
 ---
 
@@ -270,6 +270,14 @@ React 只提供了一种通信手段：传参。对于大应用，很不方便�
 
 ---
 
+## 状态的同步
+
+通信的本质是状态的同步。
+
+React 同步状态的基本方法：找到通信双方最近的共同父组件，通过它的`state`，使得子组件的状态保持同步。
+
+---
+
 ## Flux 架构
 
 Facebook 提出 Flux 架构的概念，被认为是 React 应用的标准架构。
@@ -277,6 +285,14 @@ Facebook 提出 Flux 架构的概念，被认为是 React 应用的标准架构�
 ![](./images/flow.png)
 
 最大特点：数据单向流动。与 MVVM 的数据双向绑定，形成鲜明对比。
+
+---
+
+## Flux 的核心思想
+
+- 不同组件的`state`，存放在一个外部的、公共的 Store 上面。
+- 组件订阅 Store 的不同部分。
+- 组件发送（dispatch）动作（action），引发 Store 的更新。
 
 Flux 只是一个概念，有30多种实现。
 
@@ -372,7 +388,7 @@ Redux 层保存所有状态，React 组件拿到状态以后，渲染出 HTML �
 ---
 
 - Redux 将组件分成 UI 组件和容器组件两类。
-- UI 组件是纯组件，需要用户自己写。
+- UI 组件是纯组件，不包含 state 和生命周期方法，不涉及组件的行为，只涉及组件的外观。
 
 ```javascript
 <div className="index">
@@ -386,7 +402,11 @@ Redux 层保存所有状态，React 组件拿到状态以后，渲染出 HTML �
 
 ---
 
-容器组件在用户给出配置以后，由 Redux 生成。
+容器组件正好相反。
+
+- 不涉及组件的外观，只涉及组件的行为。
+- 负责订阅 Store，将 Store 的数据处理以后，再通过参数传给 UI 组件。
+- 用户给出配置以后，由 Redux 生成。
 
 ```javascript、
 // MyComponent 是纯的 UI 组件
@@ -400,6 +420,16 @@ const App = connect(
 - mapDispatchToProps：定义 UI 组件与 Action 之间的映射
 
 ---
+
+## 拆分 UI 组件和容器组件的好处
+
+- UI 组件与后台数据无关，可以由设计师负责
+- 容器组件只负责数据和行为，一旦 Store 的数据结构变化，只要调整容器组件即可
+- 表现层和功能层脱钩，有利于代码重用，也有利于看清应用的数据结构和业务逻辑
+
+---
+
+## Reducer 函数
 
 `reducer`是一个纯函数，用来接收`action`，算出新的`state`。
 
