@@ -4,16 +4,11 @@
   "description": "",
   "main": "app/main.jsx",
   "scripts": {
-    "lint": "eslint 'app/**/*.@(js|jsx)'",
-    "lint:msg": "validate-commit-msg",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack-dev-server --devtool eval --progress --hot --content-base app",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
-    "deploy-windows": "SET NODE_ENV=production & webpack -p --config webpack.production.config.js",
-    "validate": "npm ls",
-    "commit": "git cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1"
+    "deploy-windows": "SET NODE_ENV=production & webpack -p --config webpack.production.config.js"
   },
   "dependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
@@ -31,20 +26,10 @@
     "babel-preset-es2015": "6.x",
     "babel-preset-react": "6.x",
     "babel-preset-stage-0": "6.x",
-    "commitizen": "^2.5.0",
-    "conventional-changelog-cli": "1.x",
     "copy-webpack-plugin": "latest",
     "css-loader": "~0.23.0",
-    "cz-conventional-changelog": "^1.1.5",
-    "eslint": "latest",
-    "eslint-config-airbnb": "latest",
-    "eslint-plugin-import": "^1.9.2",
-    "eslint-plugin-jsx-a11y": "latest",
-    "eslint-plugin-react": "latest",
-    "ghooks": "^1.0.3",
     "open-browser-webpack-plugin": "0.0.2",
     "style-loader": "~0.13.0",
-    "validate-commit-msg": "2.x",
     "webpack": "latest",
     "webpack-dev-server": "latest"
   },
@@ -54,29 +39,5 @@
     "boilerplate"
   ],
   "author": "Ruan Yifeng",
-  "license": "MIT",
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "npm run lint:msg"
-    },
-    "validate-commit-msg": {
-      "types": [
-        "feat",
-        "fix",
-        "docs",
-        "style",
-        "refactor",
-        "perf",
-        "test",
-        "chore",
-        "revert"
-      ],
-      "warnOnFail": false,
-      "maxSubjectLength": 100
-    },
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
-  }
+  "license": "MIT"
 }
