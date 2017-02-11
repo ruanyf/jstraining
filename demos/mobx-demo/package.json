@@ -30,8 +30,8 @@
     "css-loader": "~0.23.0",
     "open-browser-webpack-plugin": "0.0.2",
     "style-loader": "~0.13.0",
-    "webpack": "latest",
-    "webpack-dev-server": "latest"
+    "webpack": "1.x",
+    "webpack-dev-server": "1.x"
   },
   "keywords": [
     "es6",
