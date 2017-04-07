@@ -527,7 +527,7 @@ $ npm run build
 
 ### 操作步骤
 
-（1） 命令行进入`rest-api-demo`目录，执行下面的命令。
+（1） 命令行进入`demos/rest-api-demo`目录，执行下面的命令。
 
 ```bash
 $ npm install -S json-server

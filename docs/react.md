@@ -321,7 +321,7 @@ MobX 的核心是观察者模式。
 ## MobX 的最简单例子
 
 ```javascript
-const {observable, computed} = mobx;
+const {observable} = mobx;
 const {observer} = mobxReact;
 
 const person = observable({name: "张三", age: 31});
