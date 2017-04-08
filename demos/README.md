@@ -306,7 +306,7 @@ $ npm install
 $ npm start
 ```
 
-（3） 打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究`app/`目录下面的代码。
+（3） 打开浏览器，访问 http://localhost:8080 ，查看结果，并仔细研究`app/`目录下面的代码。
 
 ### 注意事项
 
