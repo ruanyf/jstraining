@@ -362,7 +362,7 @@ $ npm install
 $ npm start
 ```
 
-（2）打开浏览器，访问 http://localhost:8080，查看结果，并仔细研究代码。
+（2）打开浏览器，访问 http://localhost:8080 ，查看结果，并仔细研究代码。
 
 ### 注意事项
 
