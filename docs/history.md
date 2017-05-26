@@ -194,7 +194,7 @@ App.Router = Backbone.Router.extend({
 
 > SPA = Single-page application
 
-2010年后，前端工程师从开发页面，变成了开发”前端应用“（跑在浏览器里面的应用程序）。
+2010年后，前端工程师从开发页面，变成了开发“前端应用”（跑在浏览器里面的应用程序）。
 
 ---
 
@@ -397,4 +397,3 @@ Node = JavaScript + 操作系统 API
   - VR 端
   - ……
 - 云工程师
-
