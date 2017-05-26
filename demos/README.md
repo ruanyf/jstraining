@@ -83,7 +83,7 @@
 
 ### 练习
 
-1. 修改源码，将显示文字变为 ”Hello React!“。
+1. 修改源码，将显示文字变为 “Hello React!”。
 
 ## React 组件语法
 
@@ -378,7 +378,7 @@ $ npm start
 </div>
 ```
 
-（2） 进行数据处理、并包含状态的组件，称为”容器组件“。Redux 使用`connect`方法，自动生成 UI 组件对应的”容器组件“。
+（2） 进行数据处理、并包含状态的组件，称为“容器组件”。Redux 使用`connect`方法，自动生成 UI 组件对应的“容器组件”。
 
 ```javascript、
 // MyComponent 是纯的 UI 组件
@@ -981,7 +981,7 @@ nightmare
   .end()
 ```
 
-上面代码表示，打开淘宝首页，在搜索框键入`电视机`，点击”搜索“按钮，等待`#spulist-grid`元素出现，在页面内注入（`evaluate`）代码，将执行结果返回。
+上面代码表示，打开淘宝首页，在搜索框键入`电视机`，点击“搜索”按钮，等待`#spulist-grid`元素出现，在页面内注入（`evaluate`）代码，将执行结果返回。
 
 ```javascript
   .then(function (result) {
@@ -1000,7 +1000,7 @@ Nightmare 会返回一个 Promise 对象，`then`方法指定操作成功的回�
 $ node taobao.test.js
 ```
 
-正常情况下，运行结束后，命令行会显示淘宝”电视机“搜索结果的第一项。
+正常情况下，运行结束后，命令行会显示淘宝“电视机”搜索结果的第一项。
 
 （4）浏览器打开`index.html`文件，这是 React 练习时做过的一个例子，点击`Hello World`，标题会变成`Hello Clicked`。我们就要编写测试脚本，测试这个功能。
 
@@ -1181,4 +1181,3 @@ $ git push
 ### 练习
 
 1. 修改`hello.js`，让其输出`Hello Node`。并修改测试用例`hello.test.js`，使之能够通过 Travis CI 的自动构建。
-
