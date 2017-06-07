@@ -40,7 +40,7 @@ Postman 是一个 HTTP 通信测试工具，REST API 的练习会用到它。
 
 ```bash
 # Linux & Mac
-$ git clone git@github.com:ruanyf/jstraining.git
+$ git clone https://github.com/ruanyf/jstraining.git
 
 # Windows
 $ git clone https://github.com/ruanyf/jstraining.git
