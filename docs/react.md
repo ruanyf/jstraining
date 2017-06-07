@@ -32,7 +32,7 @@ React 是目前最热门的前端框架。
 
 ## JSX 语法
 
-React 使用 JSX 语法，JavaScript 代码中可以写 HTML 代码。
+React 使用 JSX 语法，JavaScript 代码中可以写类似 HTML 的代码。
 
 ```javascript
 let myTitle = <h1>Hello, world!</h1>;
