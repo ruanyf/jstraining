@@ -118,7 +118,7 @@ Mocha 是目前最常用的测试框架。
 
 - 使用本机安装的浏览器
 - 使用 Selenium Driver
-- 使用 PhantomJS
+- 使用 Headless Chrome
 - 使用 Electron
 
 ---
