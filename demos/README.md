@@ -75,7 +75,7 @@
 
 ### 操作步骤
 
-1. 浏览器打开`demos/jsx-demo/index.html`，仔细查看源码。
+1. 浏览器打开[`demos/jsx-demo/index.html`](./jsx-demo/index.html)仔细查看源码。
 
 ### 注意事项
 
