@@ -93,7 +93,7 @@
 
 ### 操作步骤
 
-1. 浏览器打开`demos/react-component-demo/index1.html`，仔细查看源码。
+1. 浏览器打开[`demos/react-component-demo/index1.html`](./react-component-demo/index1.html)，仔细查看源码。
 
 ### 注意事项
 
@@ -110,7 +110,7 @@
 
 ### 操作步骤
 
-1. 浏览器打开`demos/react-component-demo/index2.html`，仔细查看源码。
+1. 浏览器打开[`demos/react-component-demo/index2.html`](./react-component-demo/index2.html)，仔细查看源码。
 
 ### 注意事项
 
@@ -128,7 +128,7 @@
 
 ### 操作步骤
 
-1. 浏览器打开`demos/react-component-demo/index3.html`，仔细查看源码。
+1. 浏览器打开[`demos/react-component-demo/index3.html`](./react-component-demo/index3.html)，仔细查看源码。
 
 ### 注意事项
 
@@ -176,7 +176,7 @@ handleChange(e) {
 
 ### 操作步骤
 
-1. 浏览器打开`demos/react-component-demo/index4.html`。
+1. 浏览器打开[`demos/react-component-demo/index4.html`](./react-component-demo/index4.html)。
 1. 点击`Hello World`，看看会发生什么。
 
 ### 练习
@@ -224,7 +224,7 @@ this.setState({
 
 ### 操作步骤
 
-1. 打开`demos/react-lifecycle-demo/index.html`，仔细查看源码。
+1. 打开[`demos/react-lifecycle-demo/index.html`](./react-lifecycle-demo/index.html)，仔细查看源码。
 
 ### 注意事项
 
@@ -287,7 +287,7 @@ projects.forEach(p => {
 
 ### 操作步骤
 
-1. 浏览器打开`demos/recharts-demo/index.html`，查看效果。
+1. 浏览器打开[`demos/recharts-demo/index.html`](./recharts-demo/index.html)，查看效果。
 
 ## MobX
 
