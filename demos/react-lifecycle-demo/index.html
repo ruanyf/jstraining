@@ -19,7 +19,7 @@
         data: null
       };
     }
-
+// ajax 请求
     componentDidMount() {
       const url = 'https://api.github.com/search/repositories?q=javascript&sort=stars';
       $.getJSON(url)
@@ -42,11 +42,16 @@
       } else if (this.state.error !== null) {
         return <span>Error: {this.state.error}</span>;
       } else {
-        /* 你的代码填入这里 */
+        console.log(this.state.data); //在console log 中显示数据，查看类型
+        var projects = this.state.data.items;
+        var results = [];
+        projects.forEach(p => {
+          var item = <li>{p.name}{'\t'}{p.id}</li>;
+          results.push(item);
+        });
         return (
           <div>
-            <p>API 数据获取成功</p>
-            <p>改写代码，将结果显示在这里</p>
+            <ul>{results}</ul>
           </div>
         );
       }
