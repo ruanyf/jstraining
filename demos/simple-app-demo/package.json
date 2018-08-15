@@ -2,16 +2,17 @@
   "name": "simple-app-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "build": "webpack app.js bundle.js",
+    "build": "webpack --mode production ./app.js -o ./bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.1.1",
-    "webpack": "^1.13.3"
+    "jquery": "^3.3.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
   }
 }
