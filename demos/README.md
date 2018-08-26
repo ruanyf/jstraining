@@ -657,9 +657,6 @@ $ node app1.js
 # windows powershell
 $ $env:PORT=7070
 $ node app1.js
-
-# windows (git bash)
-
 ```
 
 浏览器就可以访问`localhost:7070/home`了。
