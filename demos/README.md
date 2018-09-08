@@ -963,7 +963,7 @@ $ npm install
 
 注意，Nightmare 会先安装 Electron，而 Electron 的安装需要下载境外的包，有时会连不上，导致安装失败。所以，这里先设置了环境变量，指定使用国内的 Electron 源，然后才执行安装命令。
 
-（2）查看一下浏览器自动化脚本`taobao.test.js`。
+（2）查看一下浏览器自动化脚本`jd.test.js`。
 
 ```javascript
 var Nightmare = require('nightmare');
@@ -974,18 +974,19 @@ var nightmare = Nightmare({ show: true });
 
 ```javascript
 nightmare
-  .goto('https://www.taobao.com/')
-  .type('#q', '电视机')
-  .click('form[action*="/search"] [type=submit]')
-  .wait('#spulist-grid')
+  .goto('https://www.jd.com/')
+  .type('#key', '电视机')
+  .click('button.button')
+  .wait(3000)
+  .exists('div.gl-i-wrap')
   .evaluate(function () {
-    return document.querySelector('#spulist-grid .grid-item .info-cont')
+    return document.querySelector('div.gl-i-wrap div.p-name-type-2')
       .textContent.trim();
   })
   .end()
 ```
 
-上面代码表示，打开淘宝首页，在搜索框键入`电视机`，点击“搜索”按钮，等待`#spulist-grid`元素出现，在页面内注入（`evaluate`）代码，将执行结果返回。
+上面代码表示，打开京东首页，在搜索框键入`电视机`，点击“搜索”按钮，等待`div.gl-i-wrap`元素出现，在页面内注入（`evaluate`）代码，将执行结果返回。
 
 ```javascript
   .then(function (result) {
