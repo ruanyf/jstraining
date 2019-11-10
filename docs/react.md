@@ -408,7 +408,7 @@ Redux 层保存所有状态，React 组件拿到状态以后，渲染出 HTML �
 - 负责订阅 Store，将 Store 的数据处理以后，再通过参数传给 UI 组件。
 - 用户给出配置以后，由 Redux 生成。
 
-```javascript、
+```javascript
 // MyComponent 是纯的 UI 组件
 const App = connect(
   mapStateToProps,
