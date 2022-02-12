@@ -19,7 +19,7 @@ $ node -v
 Node 的模块管理器 npm 会一起安装好。由于 Node 的官方模块仓库网速太慢，模块仓库需要切换到阿里的源。
 
 ```bash
-$ npm config set registry https://registry.npm.taobao.org/
+$ npm config set registry https://registry.npmmirror.com/
 ```
 
 执行下面的命令，确认是否切换成功。
